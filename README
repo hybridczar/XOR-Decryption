@@ -1,0 +1,19 @@
+Descriptions:
+
+-'XOR_Shifter'-
+This program duplicates the encrypted string that is entered into it, and then xors that copy against the original starting at index 1 and shifting it until it had cycled all the way though the inital string. These results are then used to determine the key length because the key will leave a pattern and a frequency analysis can be used to find multiples of the keylength.
+
+-'Mod_shifter'-
+This program takes in an encrypted string along with the length of the key that was used to ecrypt the data and produces a list of possible choices of plaintext characters for each position in the key. This is done by creating another duplicate of the enrypted data and xor'ing specific characters and then shifting the entire string by the key length and repeating that process until it has reached the end of the original data.
+
+-'xor_decryptor'-
+This program takes an ecrypted string and reverse xors it with a password specified by the user. This well then produce the plaintext data. Functionality of xor = (Plaintext = P, key = k, encryption = e) P+k=e, K+e=P, P+e=K. Due to this it can be used in a reverse manner and the results we received from the 'Mod_Shifter' program can be used to determine the key instead of the plaintext.
+
+Step 1:
+Start by entering the encrypted string in the Xor_Shifter program and check the ouput for a result that has a character repetition greater than 6%. Any shift that has this repetition is considered a multiple of the key length.
+
+Step 2:
+After finding the key length or a multiple, Open the Mod_Shifter program and enter in the encrypted text as well as the key length. Choose the most common character for each index of the results and record them.
+
+Step 3:
+Take the recorded results and enter them in order into the xor_decryptor program along with the encrypted text. This should result in the key being returned.
